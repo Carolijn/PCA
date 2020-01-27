@@ -32,7 +32,8 @@ data <- data[,c(2,1,3:29)]
 data <- diff(data)
 
 #standardize the X variables
-Xt = data[,2:length(data[2,])]
+Yt = data[,c(1,2,4,5,6,7,8)]
+Xt = data[,-c(1,2,4,5,6,7,8)]
 Xt <- scale(Xt)
 
 # Create variable for GDP growth
