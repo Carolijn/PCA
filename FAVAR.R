@@ -31,8 +31,7 @@ FAVAR.estimation <- function(y, Fa, x_star, lagorder = 1, deterministic_regresso
                                  lag.max = NULL,
                                  ic = criterion)
   #3. Generate output
-  output_list <- list(estimated_model)
-  return(output_list)
+  return(estimated_model)
 }
 
 ## Function for making predictions in FAVAR framework 
