@@ -53,12 +53,12 @@ loading = pca$rotation[,1:k]
 V = sum((Xt - F%*%t(loading))^2)/(N*T)}
 
 var.hat = V(dim(Xt)[2])
-PC_1 = function(k){ V(k) + k*var.hat*((N+T)/(N*T))*log((N+T)/(N*T))}
+PC_1 = function(k){ V(k) + k*var.hat*((N+T)/(N*T))*log((N*T)/(N+T))}
 PC_1 = Vectorize(PC_1); curve(PC_1, 0, 20)
 PC_2 = function(k){ V(k) + k*var.hat*((N+T)/(N*T))*log(C_nt_squared)}
 PC_2 = Vectorize(PC_2); curve(PC_2, 0, 20)
 
-IC_1 = function(k){ log(V(k)) + k*var.hat*((N+T)/(N*T))*log((N+T)/(N*T))}
+IC_1 = function(k){ log(V(k)) + k*((N+T)/(N*T))*log((N*T)/(N+T))}
 IC_1 = Vectorize(IC_1); curve(IC_1, 0, 20)
-IC_2 = function(k){ log(V(k)) + k*var.hat*((N+T)/(N*T))*log(C_nt_squared)}
+IC_2 = function(k){ log(V(k)) + k*((N+T)/(N*T))*log(C_nt_squared)}
 IC_2 = Vectorize(IC_2); curve(IC_2, 0, 20)
