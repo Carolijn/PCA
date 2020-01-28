@@ -28,6 +28,7 @@ data <- data[,c(2,1,3:29)]
 # Variable selection (new model contains 22 variables)
 #data <- data[,-c(15,18,19,24,26,27,28,29)]
 
+##################################  Added Data Preperation  ##################################
 # Create first differences of data
 data_new = diff(data)
 Xt = data_new[,-c(1,2,4,5,6,7,8)] 
@@ -36,7 +37,7 @@ Yt = data_new[,c(1,2,4,5,6,7,8)]
 # Standardize X_t data 
 Xt = scale(Xt)
 
-# Principal component analysis
+################################ Principal component analysis ##################################
 # Note that prcomp uses the singular value decomposition, we could also do spectral decomposition using princomp (difference??)
 pca <- prcomp(~ ., data=Xt, na.action=na.omit, scale=TRUE)
 summary(pca)
