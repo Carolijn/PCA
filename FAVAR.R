@@ -15,7 +15,7 @@
 # evluation_criterion ....  estimated criterion for criterion that is put in
 
 
-FAVAR.estimation <- function(y, Fa, x_star, lagorder = 1, deterministic_regressors = "both", criterion = "AIC") {
+FAVAR.estimation <- function(y, Fa, x_star, lagorder = 1, deterministic_regressors = "both") {
   #1. Preliminaries: combine data and make training and testset####
   
   fulldata <- ts.union(Fa, x_star)
